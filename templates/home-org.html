@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon" />
+</head>
+<body>
+    <h3>{% print "DrumLandia" %}</h3>
+
+    {% block content %}
+    <h3>Select a Drummer</h3>
+    <br>
+    <form action="/results">
+    {% for n in drummer_list %}
+    <input type="radio" name="drummer" value="{{ n }}">{{ n }}<br>
+    {% endfor %}
+
+  <br>
+  <input type="submit" value='drummer'>
+  </form>
+    {% endblock %}
+
+</body>
+</html>
+
+
+
